@@ -29,7 +29,8 @@ mkdir /mnt/usb -p
 创建脚本/etc/mount-sd.sh
 
 #!/bin/sh
-/bin/mount -t vfat /dev/$1 /mnt/sd
+
+mount -t vfat /dev/$1 /mnt/sd
 sync
 
 添加可执行权限chmod +x /etc/mount-sd.sh
@@ -37,6 +38,7 @@ sync
 /etc/umount-sd.sh
 
 #!/bin/sh
+
 sync
 umount /mnt/sd
 
